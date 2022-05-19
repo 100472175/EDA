@@ -220,3 +220,29 @@ data2 = getIndices(data, 2)
 print(len(data))
 print(data2)
 
+
+def BinarySeach(data, x):
+    # Devuelve índices
+    if data is None or len(data) == 0 or x is None:
+        return -1
+
+    return _BinarySearch(data, x, 0, len(data)-1)
+
+
+def _BinarySearch(data, x, start, end):
+    if start == end:
+        if data[start] == x:
+            return [start]
+        else:
+            return []
+
+    m = (start + end) // 2
+    left = _BinarySearch(data, x, start, m)
+    right = _BinarySearch(data, x, m+1, end)
+
+    return left + right
+
+data = [1, 2, 3, 4, 5, 6, 7, 8]
+print(data)
+print("Binary Search", BinarySeach(data, 2))
+
