@@ -27,7 +27,7 @@ def smallest_even(lists):
 
 
 def get_indexes(data: list, x):
-    return _get_indexes(data, x, 0, len(list)-1)
+    return _get_indexes(data, x, 0, len(list) - 1)
 
 
 def _get_indexes(lists: list, x, start: 0, end):
@@ -61,7 +61,7 @@ def sumMultiples(data, x):
 
     mid = len(data) // 2
     half1 = sumMultiples(data[:mid], x)
-    half2 = sumMultiples(data[mid+1:], x)
+    half2 = sumMultiples(data[mid + 1:], x)
 
     return half1 + half2
 
@@ -123,7 +123,7 @@ def LongestString(data):
 
     m = len(data) // 2
     part1 = data[:m]
-    part2 = data[m+1:]
+    part2 = data[m + 1:]
 
     word1 = LongestString(part1)
     word2 = LongestString(part2)
@@ -146,7 +146,7 @@ def count(data, letter):
 
     m = len(data) // 2
     part1 = data[:m]
-    part2 = data[m+1:]
+    part2 = data[m + 1:]
 
     count1 = count(part1, letter)
     count2 = count(part2, letter)
@@ -177,7 +177,7 @@ def WordsLengthSmallerEqual(data, length):
 def IndexOfElement(a, x):
     if a is None or len(a) == 0:
         return -1
-    return _IndexOfElement(a, x, 0, len(a)-1)
+    return _IndexOfElement(a, x, 0, len(a) - 1)
 
 
 def _IndexOfElement(a, x, start, end):
@@ -197,10 +197,10 @@ def _IndexOfElement(a, x, start, end):
 def getIndices(data, x):
     if data == None or len(data) == 0:
         return []
-    return _getIndices(data, x, 0, len(data)-1)
+    return _getIndices(data, x, 0, len(data) - 1)
+
 
 def _getIndices(data, x, start, end):
-
     if start == end:
         if data[start] == x:
             return [start]
@@ -209,13 +209,12 @@ def _getIndices(data, x, start, end):
 
     m = (start + end) // 2
     half1 = _getIndices(data, x, start, m)
-    half2 = _getIndices(data, x, m+1, end)
+    half2 = _getIndices(data, x, m + 1, end)
 
     return half1 + half2
 
 
-
-data = [1,2,3,4,5,6,7,8,9,1,"a",20,50,2]
+data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, "a", 20, 50, 2]
 data2 = getIndices(data, 2)
 print(len(data))
 print(data2)
@@ -226,7 +225,7 @@ def BinarySeach(data, x):
     if data is None or len(data) == 0 or x is None:
         return -1
 
-    return _BinarySearch(data, x, 0, len(data)-1)
+    return _BinarySearch(data, x, 0, len(data) - 1)
 
 
 def _BinarySearch(data, x, start, end):
@@ -238,9 +237,10 @@ def _BinarySearch(data, x, start, end):
 
     m = (start + end) // 2
     left = _BinarySearch(data, x, start, m)
-    right = _BinarySearch(data, x, m+1, end)
+    right = _BinarySearch(data, x, m + 1, end)
 
     return left + right
+
 
 data = [1, 2, 3, 4, 5, 6, 7, 8]
 print(data)
@@ -268,6 +268,7 @@ data = [6, 2, 7, 4, 7, 3, 1, 8]
 print(data)
 print("Quicksort", quicksort(data))
 
+
 def mergeSort(data):
     if len(data) < 2:  # same as len(data) == 1
         return data
@@ -276,6 +277,7 @@ def mergeSort(data):
         left = mergeSort(data[:mid])
         right = mergeSort(data[mid:])
         return _mergeSort(left, right)
+
 
 def _mergeSort(left, right):
     result = []
@@ -294,6 +296,7 @@ def _mergeSort(left, right):
         return result
     else:
         raise ValueError("Length of input lists is not the same as the result of the merge")
+
 
 data = [6, 2, 7, 4, 7, 3, 1, 8, 9, 13]
 print(data)

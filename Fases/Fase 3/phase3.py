@@ -4,7 +4,7 @@ import sys
 
 
 class Graph2(Graph):
-    """ def min_number_edges(self, start, end):
+    """def min_number_edges(self, start, end):
         # This function returns the minimum number of edges to navigate from the vertex start to the end vertex
         if start not in self._vertices or end not in self._vertices:
             raise ValueError("Vertex not in graph")
@@ -24,7 +24,7 @@ class Graph2(Graph):
         return disk[end]"""
 
     # Disktras Algorith with graphs
-    """ def dijkstra(self, start):
+    """def dijkstra(self, start):
         # This function returns the minimum number of edges to navigate from the vertex start to the end verte"
         if start not in self._vertices:
             raise ValueError("Vertex not in graph")
