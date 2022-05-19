@@ -246,3 +246,55 @@ data = [1, 2, 3, 4, 5, 6, 7, 8]
 print(data)
 print("Binary Search", BinarySeach(data, 2))
 
+
+def quicksort(data):
+    if len(data) < 2:
+        return data
+    else:
+        pivot = data[-1]
+        less = []
+        greater = []
+
+        for i in data:
+            if i < pivot:
+                less.append(i)
+            elif i > pivot:
+                greater.append(i)
+
+    return quicksort(less) + [pivot] + quicksort(greater)
+
+
+data = [6, 2, 7, 4, 7, 3, 1, 8]
+print(data)
+print("Quicksort", quicksort(data))
+
+def mergeSort(data):
+    if len(data) < 2:  # same as len(data) == 1
+        return data
+    else:
+        mid = len(data) // 2
+        left = mergeSort(data[:mid])
+        right = mergeSort(data[mid:])
+        return _mergeSort(left, right)
+
+def _mergeSort(left, right):
+    result = []
+    i, j = 0, 0  # Puntero a las listas para ver si quedan objetos en las listas
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    result += left[i:]
+    result += right[j:]
+    if len(left) + len(right) == len(result):
+        return result
+    else:
+        raise ValueError("Length of input lists is not the same as the result of the merge")
+
+data = [6, 2, 7, 4, 7, 3, 1, 8, 9, 13]
+print(data)
+print("MergeSort", mergeSort(data))
