@@ -67,9 +67,9 @@ class Graph2(Graph):
             # If an adjacent vertex has not been visited, 
             # then mark it visited and enqueue it 
             for adj in self._vertices[s]: 
-                if visited[adj._vertex] == False: 
-                    queue.append(adj._vertex) 
-                    visited[adj._vertex] = True
+                if visited[adj.vertex] == False:
+                    queue.append(adj.vertex)
+                    visited[adj.vertex] = True
 
   # The function to do DFS traversal. It uses recurison
     def dfs(self):
@@ -114,12 +114,12 @@ if __name__ == '__main__':
     g=Graph2(labels)
 
     #Now, we add the edges
-    g.addEdge('A','C',12) #A->(12)C
-    g.addEdge('A','D',60) #A->(60)D
-    g.addEdge('B','A',10) #B->(10)A
-    g.addEdge('C','B',20) #C->(20)B
-    g.addEdge('C','D',32) #C->(32)D
-    g.addEdge('E','A',7)  #E->(7)A
+    g.add_edge('A','C',12) #A->(12)C
+    g.add_edge('A','D',60) #A->(60)D
+    g.add_edge('B','A',10) #B->(10)A
+    g.add_edge('C','B',20) #C->(20)B
+    g.add_edge('C','D',32) #C->(32)D
+    g.add_edge('E','A',7)  #E->(7)A
 
     print(g)
     print()
